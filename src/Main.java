@@ -13,6 +13,10 @@ public class Main {
 		ArrayList<Mineral> minerals = getMinerals();
 		Random rand = new Random();
 		
+		// prompt to begin
+		System.out.print("Please press enter to begin");
+		scan.nextLine();
+		
 		for(int i=0; i<minerals.size(); i++) {
 			
 			// get a random mineral
