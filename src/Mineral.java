@@ -15,10 +15,10 @@ public class Mineral {
 	
 	@Override
 	public String toString() {
-		return 	"name: " + name + 
-				"\tcode: " + code + "\n" +
-				"\tuses: " + uses + 
-				"\tid: " + id + "\n";
+		return 	"name: " + name + "\n" +
+				"code: " + code + "\n" +
+				"uses: " + uses + "\n" +
+				"id: " + id + "\n";
 	}
 	
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,56 +7,51 @@ public class Main {
  
 	public static void main(String[] args) {
 		
-		ArrayList<String> rockNames = new ArrayList<String>();
-		rockNames.add("QUARTZ");
-		rockNames.add("FELDSPAR");
-		rockNames.add("HEMATITE");
-		rockNames.add("HORNBLENDE");
-		rockNames.add("PYRITE");
-		rockNames.add("HALITE");
-		rockNames.add("CHALCOPYRITE");
-		rockNames.add("GYPSUM");
-		rockNames.add("OLIVINE");
-		rockNames.add("MAGNETITE");
-		rockNames.add("GALENA");
-		rockNames.add("BIOTITE");
-		rockNames.add("PLAGIOCLASE");
-		rockNames.add("MUSCOVITE");
-		rockNames.add("PYROXENE");
-		rockNames.add("CALCITE");
-		rockNames.add("APATITE");
-		rockNames.add("FLUORITE");
-		rockNames.add("GARNET");
-		rockNames.add("SULFUR");
+		Scanner scan = new Scanner(System.in);		// user input
+		boolean[] usedMinerals = new boolean[20];	// keep track of which minerals have been used
+		Arrays.fill(usedMinerals, false);
+		ArrayList<Mineral> minerals = getMinerals();
+		Random rand = new Random();
 		
-		Random r = new Random();
-		
-		// build up randomized ArrayList of rock names
-		ArrayList<String> randomizedRocks = new ArrayList<String>();
-		for(int i=0; i<rockNames.size(); i++) {
-			String chosenRock = rockNames.get(r.nextInt(rockNames.size()));
-
-			// prevent repetitions
-			while(randomizedRocks.contains(chosenRock))
-				chosenRock = rockNames.get(r.nextInt(rockNames.size()));
-			randomizedRocks.add(chosenRock);
-		}
-		
-		// on every 'enter', print the next rock from the randomized ArrayList
-		Scanner s = new Scanner(System.in);
-		for(int i=0; i<randomizedRocks.size() && s.nextLine() != null; i++) {
-			String currRock = randomizedRocks.get(i);
-			System.out.print("Find the " + currRock + "!");
-			if(s.nextLine() != null) {
-				System.out.println(	currRock + " was number " + 
-									(rockNames.indexOf(currRock) +1) + "\n");
+		for(int i=0; i<minerals.size(); i++) {
+			
+			// get a random mineral
+			Mineral currMineral = null;
+			int randIndex = rand.nextInt(minerals.size());
+			while(currMineral==null || usedMinerals[randIndex]==true) {
+				randIndex = rand.nextInt(minerals.size());
+				currMineral =  minerals.get(randIndex);
 			}
+				
+			// mark the mineral visited
+			usedMinerals[randIndex] = true;
+			
+			// ask user for each piece of info
+			System.out.print("\n"+currMineral.name);
+			scan.nextLine();
+			
+			System.out.print("Where is " + currMineral.name + "?");
+			scan.nextLine();
+			System.out.print("Box " + currMineral.code);
+			scan.nextLine();
+			
+			
+			System.out.print("What is something unique about " + currMineral.name + " used for identification?");
+			scan.nextLine();
+			System.out.print(currMineral.id);
+			scan.nextLine();
+			
+			System.out.print("What are some uses of " + currMineral.name + "?");
+			scan.nextLine();
+			System.out.print(currMineral.uses);
+			scan.nextLine();
 		}
-		System.out.println("\nall done!!!");
-		s.close();
+		scan.close();
+		System.out.println("Congratulations, you finished all the minerals!");
 	}
 	
-	private ArrayList<Mineral> setupMinerals() {
+	// create an ArrayList of all required minerals
+	private static ArrayList<Mineral> getMinerals() {
 		ArrayList<Mineral> minerals = new ArrayList<Mineral>();
 		
 		minerals.add(new Mineral(	"QUARTZ", 1,
