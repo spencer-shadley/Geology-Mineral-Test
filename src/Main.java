@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-
+ 
 	public static void main(String[] args) {
 		
 		ArrayList<String> rockNames = new ArrayList<String>();
