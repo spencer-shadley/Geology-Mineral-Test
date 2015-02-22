@@ -1,114 +1,18 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-
-public class Main implements ActionListener{
-	
-	// creates and displays dialog box (JFrame)
-	private static void makeDialog() {
-		// create frame
-		JFrame frame = new JFrame("Mineral Test");
-		
-		// closing frame behavior
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		// create components and add them to frame
-		JMenuBar greenMenuBar = new JMenuBar();
-		greenMenuBar.setOpaque(true);
-		greenMenuBar.setBackground(new Color(0,100,100));
-		greenMenuBar.setPreferredSize(new Dimension(200, 20));
-		
-		JLabel yellowLabel = new JLabel();
-		yellowLabel.setOpaque(true);
-		yellowLabel.setBackground(new Color(200,200,200));
-		yellowLabel.setPreferredSize(new Dimension(200, 180));
-		yellowLabel.setText("hello!");
-		
-		JLabel anotherLabel = new JLabel();
-		anotherLabel.setOpaque(true);
-		anotherLabel.setBackground(new Color(200,200,200));
-		anotherLabel.setPreferredSize(new Dimension(200, 180));
-		anotherLabel.setText("hey!");
-		
-		frame.setJMenuBar(greenMenuBar);
-		frame.getContentPane().add(yellowLabel);
-		frame.getContentPane().add(anotherLabel);
-		
-		/*JFrame someFrame = new JFrame();
-	    JLabel label = new JLabel("Text-Only Label");
-	    label.setFont(new Font("Serif", Font.PLAIN, 36));
-	    someFrame.add(label);
-	    someFrame.setSize(230, 230);
-	    someFrame.setVisible(true);*/
-		
-		// size frame
-		frame.pack();
-		frame.setSize(1000, 500);
-		
-		// show frame
-		frame.setVisible(true);
-	}
+public class Main {
 	
 	public static void main(String[] args) {
-		
-		//Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-            	makeDialog();
-            }
-        });
 		
 		Scanner scan = new Scanner(System.in);		// user input
 		boolean[] usedMinerals = new boolean[20];	// keep track of which minerals have been used
 		Arrays.fill(usedMinerals, false);
 		ArrayList<Mineral> minerals = getMinerals();
 		Random rand = new Random();
-		
-		
-		
-		
-		
-		
-		// frame to display stuff
-		JFrame someFrame = new JFrame();
-	    JLabel label = new JLabel("Text-Only Label");
-	    label.setFont(new Font("Serif", Font.PLAIN, 36));
-	    someFrame.add(label);
-	    someFrame.setSize(230, 230);
-	    someFrame.setVisible(true);
-	    
-	    
-	    
-	   /* JButton btnClose = new JButton("Close");
-	    btnClose.addMouseListener(new MouseAdapter() {
-	    @Override
-	    public void mouseClicked(MouseEvent e) {
-	            dispose();
-	        }
-	    });
-	    btnClose.setBounds(253, 190, 75, 25);
-	    contentPane.add(btnClose);
-	    }*/
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
 		
 		// prompt to begin
 		System.out.print("Please press enter to begin");
@@ -236,10 +140,5 @@ public class Main implements ActionListener{
 									"yellow and smells bad"));
 		
 		return minerals;
-	}
-
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 }
