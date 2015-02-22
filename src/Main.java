@@ -47,7 +47,7 @@ public class Main {
 			scan.nextLine();
 		}
 		scan.close();
-		System.out.println("Congratulations, you finished all the minerals!");
+		System.out.println("\nCongratulations, you finished all the minerals!");
 	}
 	
 	// create an ArrayList of all required minerals
@@ -100,18 +100,18 @@ public class Main {
 		
 		minerals.add(new Mineral(	"BIOTITE", 12,
 									"makes rubber and paint",
-									"light colored, thin sheet-like due to perfect single planar cleavage"));
+									"dark colored, thin sheet-like due to perfect single planar cleavage"));
 		
 		minerals.add(new Mineral(	"PLAGIOCLASE", 13,
 									"makes ceramics, galss, enamel and false teeth",
 									"light colored; visible linear striations"));
 		
 		minerals.add(new Mineral(	"MUSCOVITE", 14,
-									"makes computer chip substrates, and cosmetics",
-									"dark colored; thin sheet-like due to perfect single planar cleavage"));
+									"makes computer chip substrates and cosmetics",
+									"light colored; thin sheet-like due to perfect single planar cleavage"));
 		
 		minerals.add(new Mineral(	"PYROXENE", 15,
-									"ore of lithium to make lithium-ion batteries and overware glazes",
+									"ore of lithium to make lithium-ion batteries and ovenware glazes",
 									"blurry picture")); // clarify
 		
 		minerals.add(new Mineral(	"CALCITE", 16,
@@ -123,7 +123,7 @@ public class Main {
 									"small yellow-green uneven pieces")); // clarify
 		
 		minerals.add(new Mineral(	"FLUORITE", 18,
-									"used in fluoried toothpastes",
+									"used in fluoride toothpastes",
 									"like quartz but not as hard")); // clarify
 		
 		minerals.add(new Mineral(	"GARNET", 19,
