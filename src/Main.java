@@ -76,7 +76,7 @@ public class Main {
 									"very dark color")); // clarify
 		
 		minerals.add(new Mineral(	"PYRITE", 5,
-									"jewlery",
+									"jewelry",
 									"lustrous gold color"));
 		
 		minerals.add(new Mineral(	"HALITE", 6,
@@ -108,7 +108,7 @@ public class Main {
 									"dark colored, thin sheet-like due to perfect single planar cleavage"));
 		
 		minerals.add(new Mineral(	"PLAGIOCLASE", 13,
-									"makes ceramics, galss, enamel and false teeth",
+									"makes ceramics, glass, enamel and false teeth",
 									"light colored; visible linear striations"));
 		
 		minerals.add(new Mineral(	"MUSCOVITE", 14,
